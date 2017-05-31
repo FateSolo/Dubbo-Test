@@ -1,0 +1,4 @@
+rootProject.name = 'dubbo-parent'
+
+include 'dubbo-api', 'dubbo-server', 'dubbo-client'
+

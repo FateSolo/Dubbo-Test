@@ -15,11 +15,8 @@ out/
 build/
 **/build/
 classes/
-gradle/
 .gradle
 production/
-gradlew
-gradlew.bat
 
 signing.properties
 
