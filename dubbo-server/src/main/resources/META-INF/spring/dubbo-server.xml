@@ -18,7 +18,8 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-    <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:protocol name="dubbo" port="20880" serialization="kryo"
+                    optimizer="com.fatesolo.dubbo.api.serialization.SerializationOptimizerImpl"/>
 
     <dubbo:service interface="com.fatesolo.dubbo.api.service.BookService" ref="bookServiceImpl"/>
 
