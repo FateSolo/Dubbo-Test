@@ -1,0 +1,6 @@
+dependencies {
+    compile 'javax.validation:validation-api:1.0.0.GA'
+
+    compile 'org.apache.tomcat.embed:tomcat-embed-core:8.0.11'
+    compile 'org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.11'
+}

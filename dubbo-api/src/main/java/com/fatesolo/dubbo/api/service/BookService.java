@@ -2,14 +2,25 @@ package com.fatesolo.dubbo.api.service;
 
 import com.fatesolo.dubbo.api.bean.Book;
 
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 
+@Path("/book")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public interface BookService {
 
-    Book getBookById(int id);
+    @GET
+    @Path("/{id}")
+    Book getBookById(@PathParam("id") int id);
 
+    @GET
+    @Path("/")
     List<Book> getBooks();
 
-    boolean addBook(Book book);
+    @POST
+    @Path("/")
+    Boolean addBook(Book book);
 
 }

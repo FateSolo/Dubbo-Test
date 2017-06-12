@@ -27,7 +27,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public boolean addBook(Book book) {
+    public Boolean addBook(Book book) {
         if (book == null || book.getId() != 0 || StringUtil.isBlank(book.getName())) {
             return false;
         }

@@ -21,6 +21,9 @@
     <dubbo:protocol name="dubbo" port="20880" serialization="kryo"
                     optimizer="com.fatesolo.dubbo.api.serialization.SerializationOptimizerImpl"/>
 
-    <dubbo:service interface="com.fatesolo.dubbo.api.service.BookService" ref="bookServiceImpl"/>
+    <dubbo:protocol name="rest" port="7110" server="tomcat" contextpath="dubbo-server"/>
+
+    <dubbo:service interface="com.fatesolo.dubbo.api.service.BookService"
+                   ref="bookServiceImpl" protocol="dubbo,rest"/>
 
 </beans>
