@@ -16,7 +16,7 @@
 
     <dubbo:application name="dubbo-client"/>
 
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182,127.0.0.1:2183"/>
 
     <dubbo:reference id="bookService" interface="com.fatesolo.dubbo.api.service.BookService"/>
 
