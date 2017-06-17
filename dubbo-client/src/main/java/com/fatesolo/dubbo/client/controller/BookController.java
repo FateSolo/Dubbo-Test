@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -16,6 +17,18 @@ public class BookController {
 
     @Resource
     private BookService bookService;
+
+    @RequestMapping(value = "/info", method = RequestMethod.GET)
+    public String getInfo(HttpServletRequest request) {
+        Object sessionInfo = request.getSession().getAttribute("info");
+
+        if (sessionInfo == null) {
+            request.getSession().setAttribute("info", "Session : " + request.getLocalAddr());
+            return "No Session<br/>" + request.getLocalAddr();
+        }
+
+        return sessionInfo + "<br/>" + request.getLocalAddr();
+    }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/xml")
     public Book getBookById(@PathVariable("id") int id) {

@@ -10,6 +10,8 @@
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+    <context:property-placeholder location="classpath:config/db/db.properties"/>
+
     <context:component-scan base-package="com.fatesolo.dubbo.client">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
@@ -19,5 +21,7 @@
     <dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182,127.0.0.1:2183"/>
 
     <dubbo:reference id="bookService" interface="com.fatesolo.dubbo.api.service.BookService"/>
+
+    <import resource="spring-redis.xml"/>
 
 </beans>

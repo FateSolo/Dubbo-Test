@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements BookService {
 
-    @Resource(name = "bookDaoSimpleImpl")
+    @Resource(name = "bookDaoRedisImpl")
     private BookDao bookDao;
 
     @Override

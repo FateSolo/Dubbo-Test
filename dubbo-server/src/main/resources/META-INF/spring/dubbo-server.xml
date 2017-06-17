@@ -10,6 +10,8 @@
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+    <context:property-placeholder location="classpath:META-INF/db/db.properties"/>
+
     <context:component-scan base-package="com.fatesolo.dubbo.server">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
